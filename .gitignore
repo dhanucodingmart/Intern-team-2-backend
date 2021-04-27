@@ -3,6 +3,7 @@ npm-debug.log
 .DS_Store
 /*.env
 /config/config.env
+package-lock.json
 
 # local env files
 .env.local
