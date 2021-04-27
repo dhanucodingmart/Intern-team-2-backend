@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 var cors = require('cors')
 const app = express();
 
-// dotenv.config({ path: './config/config.env' });
+process.env.NODE_ENV == 'production' ? console.log("Production Mode") : dotenv.config({ path: './config/config.env' });
 connectDB();
 
 app.use(bodyParser.json());
