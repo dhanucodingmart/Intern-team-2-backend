@@ -16,6 +16,9 @@ app.use(cors());
 // app.use('/', express.static(path.join(__dirname, 'dist')));
 
 //routes
+app.get('/',(req, res) => {
+    res.send('App Is Working..Congrats...!')
+  });
 app.use('/auth', require('./routes/auth'));
 
 //PORT
