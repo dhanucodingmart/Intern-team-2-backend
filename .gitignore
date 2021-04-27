@@ -2,10 +2,10 @@
 npm-debug.log
 .DS_Store
 /*.env
-
+/config/config.env
 
 # local env files
-# .env.local
+.env.local
 .env.*.local
 
 # Log files
