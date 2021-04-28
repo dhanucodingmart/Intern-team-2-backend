@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const AuthController = require("../controllers/AuthController");
 const { errorCheck } = require("../services/errorCheck");
-const { requestHandler } = require("../services/requestHandler");
-const { responseSender } = require("../services/responseSender");
+const { requestHandler } = require("../utils/requestHandler");
+const { responseSender } = require("../utils/responseSender");
 
 /**
  * @description "Login Admin"

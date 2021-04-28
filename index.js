@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/dbConnect");
 const bodyParser = require("body-parser");
 var cors = require("cors");
-const errorHandler = require("./services/errorHandlingService");
+const errorHandler = require("./utils/errorHandler");
 const app = express();
 
 process.env.NODE_ENV == "production"

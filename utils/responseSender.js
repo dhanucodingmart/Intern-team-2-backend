@@ -1,4 +1,4 @@
-const { AppError } = require("../utils/appError");
+const { AppError } = require("./appError");
 const { errorCodes } = require("./errorCodes");
 
 const responseSender = (req, res, next) => {
