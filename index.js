@@ -22,7 +22,10 @@ app.use(cors());
 app.get("/", (req, res) => {
     res.send("App Is Working..Congrats...!");
 });
+
 app.use("/auth", require("./routes/auth"));
+
+app.use("/admin", require("./routes/admin"));
 
 app.use(errorHandler);
 
