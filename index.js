@@ -9,17 +9,23 @@ const app = express();
 process.env.NODE_ENV == 'production' ? console.log("Production Mode") : dotenv.config({ path: './config/config.env' });
 connectDB();
 
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
-//dist to get images, documents
-// app.use('/', express.static(path.join(__dirname, 'dist')));
+// #dist to get images, documents
+app.use('/', express.static(path.join(__dirname, 'dist')));
+app.use('/images', express.static('./Imageuploads'));
+
 
 //routes
 app.get('/',(req, res) => {
     res.send('App Is Working..Congrats...!')
   });
-app.use('/auth', require('./routes/auth'));
+  app.use('/auth', require('./routes/auth'));
+  app.use('/course', require('./routes/course'));
 
 //PORT
 const PORT = process.env.PORT || 5000;

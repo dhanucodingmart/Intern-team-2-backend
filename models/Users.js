@@ -18,15 +18,18 @@ const UserRegSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    createdAt: {
-        type: Date,
-        default: Date.now(),
+    dob: {
+        type: String,
+        required: true
+    },
+    country: {
+        type: String,
         required: true
     },
     isAdmin: {
         type: Boolean,
         required: true
     }
-})
+},{timestamps: true});
 
 module.exports = mongoose.model('User', UserRegSchema)

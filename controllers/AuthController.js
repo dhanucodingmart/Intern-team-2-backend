@@ -24,9 +24,12 @@ const register = (req, res, next) => {
             name: req.body.name,
             contactNo: req.body.contactNo,
             email: req.body.email,
+            dob: req.body.dob,
+            country: req.body.country,
             password: hashedPwd,
             isAdmin: req.body.isAdmin ? true : false
         })
+        console.log(req.body.password);
 
         try {
             let userCheck = await User.findOne({ email: req.body.email });
@@ -59,10 +62,10 @@ const register = (req, res, next) => {
 }
 
 const login = (req, res, next) => {
-    let username = req.body.username;
     let password = req.body.password;
+    console.log(req.body);
 
-    User.findOne({ $or: [{ contactNo: username }] }).then(user => {
+    User.findOne({ contactNo: req.body.username }).then(user => {
         if (user) {
             bcrypt.compare(password, user.password, (err, result) => {
                 if (err) {
