@@ -6,8 +6,7 @@ const responseSender = (req, res, next) => {
     res.status(200).json({
         status: true,
         status_code: 200,
-        message: "Success",
-        data: req.response,
+        ...req.response,
     });
 };
 

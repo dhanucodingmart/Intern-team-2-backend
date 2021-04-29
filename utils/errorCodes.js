@@ -24,16 +24,6 @@ const errorCodes = {
         message: "Invalid OTP. Kindly try again",
         status_code: 406,
     },
-    NO_PATIENT_RECORDS: {
-        status: false,
-        message: "Patient Record is empty",
-        status_code: 406,
-    },
-    PATIENT_NOT_FOUND: {
-        status: false,
-        message: "Patient Record Not Found",
-        status_code: 406,
-    },
     TOKEN_INVALID: {
         status: false,
         message: "Token is not valid",
@@ -57,11 +47,6 @@ const errorCodes = {
     ADMIN_ACCESS: {
         status: false,
         message: "Only admin can access this information",
-        status_code: 403,
-    },
-    DOCTOR_ACCESS: {
-        status: false,
-        message: "Only doctor, admin can access this information",
         status_code: 403,
     },
     EMAIL_NOT_SENT: {

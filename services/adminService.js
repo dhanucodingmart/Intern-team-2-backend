@@ -1,9 +1,12 @@
 const { AppError } = require("../utils/appError");
 const { errorCodes } = require("../utils/errorCodes");
 
-const errorCheck = (req, res, next) => {
+const errorCheck = (req) => {
     if (undefined) throw new AppError(errorCodes["OTP_INVALID"]);
-    return "Sdfsdf";
+    console.log(req.body);
+    return {
+        message: "Success",
+    };
 };
 
 module.exports = { errorCheck };
