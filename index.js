@@ -10,16 +10,7 @@ process.env.NODE_ENV == 'production' ? console.log("Production Mode") : dotenv.c
 connectDB();
 
 
-// app.use(cors());
-const { createProxyMiddleware } = require('http-proxy-middleware');
-app.use('/course', createProxyMiddleware({ 
-    target: 'http://localhost:3000/', //original url
-    changeOrigin: true, 
-    //secure: false,
-    onProxyRes: function (proxyRes, req, res) {
-       proxyRes.headers['Access-Control-Allow-Origin'] = '*';
-    }
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
