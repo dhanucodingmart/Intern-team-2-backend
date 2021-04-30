@@ -10,7 +10,7 @@ process.env.NODE_ENV == 'production' ? console.log("Production Mode") : dotenv.c
 connectDB();
 
 var corsOptions = {
-  origin: 'https://hidden-hamlet-43774.herokuapp.com',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
