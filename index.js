@@ -12,7 +12,7 @@ connectDB();
 
 // app.use(cors());
 const { createProxyMiddleware } = require('http-proxy-middleware');
-app.use('/api', createProxyMiddleware({ 
+app.use('/course', createProxyMiddleware({ 
     target: 'http://localhost:3000/', //original url
     changeOrigin: true, 
     //secure: false,
