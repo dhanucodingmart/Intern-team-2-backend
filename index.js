@@ -9,12 +9,13 @@ const app = express();
 process.env.NODE_ENV == 'production' ? console.log("Production Mode") : dotenv.config({ path: './config/config.env' });
 connectDB();
 
-var corsOptions = {
-  origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, x-requested-with");
+  next(); // Important
+})
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
