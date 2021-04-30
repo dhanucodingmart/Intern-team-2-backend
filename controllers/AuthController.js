@@ -29,8 +29,6 @@ const register = (req, res, next) => {
             password: hashedPwd,
             isAdmin: req.body.isAdmin ? true : false
         })
-        console.log(req.body.password);
-
         try {
             let userCheck = await User.findOne({ email: req.body.email });
             let userCheckTwo = await User.findOne({ contactNo: req.body.contactNo });
@@ -63,8 +61,6 @@ const register = (req, res, next) => {
 
 const login = (req, res, next) => {
     let password = req.body.password;
-    console.log(req.body);
-
     User.findOne({ contactNo: req.body.username }).then(user => {
         if (user) {
             bcrypt.compare(password, user.password, (err, result) => {

@@ -29,7 +29,11 @@ const UserRegSchema = new mongoose.Schema({
     isAdmin: {
         type: Boolean,
         required: true
-    }
+    },
+    myCreatedCourse: [{
+        type: ObjectId,
+        ref: "Course"
+    }]
 },{timestamps: true});
 
 module.exports = mongoose.model('User', UserRegSchema)
